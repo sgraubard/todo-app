@@ -12,6 +12,34 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  transition: background 0.3s;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+#themeToggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition:
+    background 0.3s,
+    transform 0.2s;
+  z-index: 100;
+}
+
+#themeToggle:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
 }
 
 .container {
@@ -21,6 +49,14 @@ body {
   padding: 30px;
   width: 100%;
   max-width: 500px;
+  transition:
+    background 0.3s,
+    box-shadow 0.3s;
+}
+
+body.dark .container {
+  background: #1e1e2e;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -28,6 +64,11 @@ h1 {
   text-align: center;
   margin-bottom: 25px;
   font-size: 28px;
+  transition: color 0.3s;
+}
+
+body.dark h1 {
+  color: #e0e0e0;
 }
 
 .input-container {
@@ -42,7 +83,19 @@ h1 {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 16px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+  background: white;
+  color: #333;
+}
+
+body.dark #todoInput {
+  background: #2a2a3e;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark #todoInput::placeholder {
+  color: #888;
 }
 
 #todoInput:focus {
@@ -80,7 +133,12 @@ h1 {
   margin-bottom: 10px;
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    background 0.3s;
+}
+
+body.dark .todo-item {
+  background: #2a2a3e;
 }
 
 .todo-item:hover {
@@ -94,6 +152,10 @@ h1 {
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+body.dark .todo-text {
+  color: #e0e0e0;
 }
 
 .todo-text.completed {

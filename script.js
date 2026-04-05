@@ -2,6 +2,22 @@
 const todoInput = document.getElementById("todoInput");
 const addBtn = document.getElementById("addBtn");
 const todoList = document.getElementById("todoList");
+const themeToggle = document.getElementById("themeToggle");
+
+// Theme toggle
+function applyTheme(isDark) {
+  document.body.classList.toggle("dark", isDark);
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+}
+
+themeToggle.addEventListener("click", () => {
+  const isDark = !document.body.classList.contains("dark");
+  applyTheme(isDark);
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+// Restore saved theme on load
+applyTheme(localStorage.getItem("theme") === "dark");
 
 // Add todo function
 function addTodo() {
