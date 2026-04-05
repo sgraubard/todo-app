@@ -72,30 +72,34 @@ body {
   transition: background 0.5s ease;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 #themeToggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--toggle-bg);
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
+  background: var(--filter-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
   cursor: pointer;
-  backdrop-filter: blur(8px);
   transition:
     background 0.3s,
-    transform 0.3s;
-  z-index: 100;
+    transform 0.3s,
+    border-color 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 #themeToggle:hover {
   background: var(--toggle-hover);
-  transform: scale(1.1) rotate(15deg);
+  transform: scale(1.06) rotate(12deg);
 }
 
 .container {
