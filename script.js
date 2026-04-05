@@ -22,6 +22,11 @@ function addTodo() {
   todoTextSpan.className = "todo-text";
   todoTextSpan.textContent = todoText;
 
+  // Toggle completed state on click
+  todoTextSpan.onclick = function () {
+    todoTextSpan.classList.toggle("completed");
+  };
+
   // Create delete button
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "delete-btn";
